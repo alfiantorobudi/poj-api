@@ -546,7 +546,7 @@ new class extends Component {
     <div class="space-y-2.5">
         @forelse($this->todos as $todo)
             <div wire:key="todo-{{ $todo->id }}" class="group p-4 rounded-2xl bg-white dark:bg-zinc-900 border transition-all duration-200 flex items-start justify-between gap-3 shadow-sm hover:shadow-md
-                                        {{ $todo->is_completed
+                                                    {{ $todo->is_completed
             ? 'border-zinc-200/60 dark:border-zinc-800/60 bg-zinc-50/50 dark:bg-zinc-900/40 opacity-75'
             : 'border-zinc-200 dark:border-zinc-800 hover:border-indigo-300 dark:hover:border-indigo-800' }}">
 
@@ -555,7 +555,7 @@ new class extends Component {
                     <!-- Toggle Checkbox Button -->
                     <button type="button" wire:click="toggleComplete({{ $todo->id }})"
                         class="mt-0.5 size-5 rounded-lg border-2 flex items-center justify-center transition shrink-0
-                                                {{ $todo->is_completed
+                                                            {{ $todo->is_completed
             ? 'bg-emerald-500 border-emerald-500 text-white shadow-sm'
             : 'border-zinc-300 dark:border-zinc-600 hover:border-emerald-500 dark:hover:border-emerald-400 bg-white dark:bg-zinc-800' }}">
                         @if($todo->is_completed)
@@ -571,7 +571,7 @@ new class extends Component {
                     <div class="flex-1 min-w-0">
                         <div class="flex flex-wrap items-center gap-2">
                             <span class="text-sm font-semibold transition
-                                                    {{ $todo->is_completed
+                                                                {{ $todo->is_completed
             ? 'line-through text-zinc-400 dark:text-zinc-500'
             : 'text-zinc-900 dark:text-zinc-100' }}">
                                 {{ $todo->title }}
@@ -601,7 +601,7 @@ new class extends Component {
                                                 $isOverdue = !$todo->is_completed && $todo->due_date->isPast();
                                             @endphp
                                             <span class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-medium rounded-md
-                                                                                                                                        {{ $isOverdue
+                                                                                                                                                                                                    {{ $isOverdue
                                 ? 'bg-rose-500/10 text-rose-500 dark:text-rose-400 border border-rose-500/20'
                                 : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400' }}">
                                                 <svg class="size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -714,21 +714,21 @@ new class extends Component {
                         <div class="flex items-center gap-2">
                             <button type="button" wire:click="$set('editPriority', 'low')"
                                 class="flex-1 py-2 rounded-xl text-xs font-semibold border transition
-                                                        {{ $editPriority === 'low'
+                                                                    {{ $editPriority === 'low'
             ? 'bg-emerald-500 text-white border-emerald-500 shadow-sm'
             : 'border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800' }}">
                                 Low
                             </button>
                             <button type="button" wire:click="$set('editPriority', 'medium')"
                                 class="flex-1 py-2 rounded-xl text-xs font-semibold border transition
-                                                        {{ $editPriority === 'medium'
+                                                                    {{ $editPriority === 'medium'
             ? 'bg-amber-500 text-white border-amber-500 shadow-sm'
             : 'border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800' }}">
                                 Medium
                             </button>
                             <button type="button" wire:click="$set('editPriority', 'high')"
                                 class="flex-1 py-2 rounded-xl text-xs font-semibold border transition
-                                                        {{ $editPriority === 'high'
+                                                                    {{ $editPriority === 'high'
             ? 'bg-rose-500 text-white border-rose-500 shadow-sm'
             : 'border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800' }}">
                                 High
