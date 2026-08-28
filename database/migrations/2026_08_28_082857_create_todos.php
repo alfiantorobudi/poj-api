@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
@@ -12,10 +13,17 @@ return new class extends Migration {
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title');
-            $table->string('description');
+            $table->text('description')->nullable();
+            $table->boolean('is_completed')->default(false)->index();
+            $table->string('priority', 20)->default('medium');
+            $table->timestamp('due_date')->nullable();
+            $table->timestamp('completed_at')->nullable();
             $table->timestamps();
+
+            $table->index(['user_id', 'is_completed']);
+            $table->index(['user_id', 'created_at']);
         });
     }
 
@@ -24,6 +32,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('todo_tables');
+        Schema::dropIfExists('todos');
     }
 };

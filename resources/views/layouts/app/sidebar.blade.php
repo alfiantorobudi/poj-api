@@ -31,6 +31,10 @@
                     :current="request()->routeIs('conversation')" wire:navigate>
                     {{ __('Conversations') }}
                 </flux:sidebar.item>
+                <flux:sidebar.item icon="check-circle" :href="route('todos.index')"
+                    :current="request()->routeIs('todos*') || request()->routeIs('todo*')" wire:navigate>
+                    {{ __('Todos') }}
+                </flux:sidebar.item>
             </flux:sidebar.group>
         </flux:sidebar.nav>
 
