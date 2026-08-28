@@ -26,9 +26,9 @@ class StoreTodoRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:5000'],
-            // 'is_completed' => ['nullable', 'boolean'],
-            // 'priority' => ['nullable', 'string', Rule::in(['low', 'medium', 'high'])],
-            // 'due_date' => ['nullable', 'date'],
+            'is_completed' => ['nullable', 'boolean'],
+            'priority' => ['nullable', 'string', Rule::in(['low', 'medium', 'high'])],
+            'due_date' => ['nullable', 'date'],
         ];
     }
 }

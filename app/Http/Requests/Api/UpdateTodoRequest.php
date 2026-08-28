@@ -26,9 +26,9 @@ class UpdateTodoRequest extends FormRequest
         return [
             'title' => ['sometimes', 'required', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:5000'],
-            // 'is_completed' => ['sometimes', 'boolean'],
-            // 'priority' => ['sometimes', 'string', Rule::in(['low', 'medium', 'high'])],
-            // 'due_date' => ['nullable', 'date'],
+            'is_completed' => ['sometimes', 'boolean'],
+            'priority' => ['sometimes', 'string', Rule::in(['low', 'medium', 'high'])],
+            'due_date' => ['nullable', 'date'],
         ];
     }
 }
