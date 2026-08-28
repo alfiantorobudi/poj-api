@@ -15,11 +15,11 @@
 
         <flux:sidebar.nav>
             <flux:sidebar.group :heading="__('Platform')" class="grid">
-                <flux:sidebar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')"
-                    wire:navigate>
+                <flux:sidebar.item icon="layout-grid" :href="route('dashboard')"
+                    :current="request()->routeIs('dashboard')" wire:navigate>
                     {{ __('Dashboard') }}
                 </flux:sidebar.item>
-                <flux:sidebar.item icon="film" :href="route('scenecraft')" :current="request()->routeIs('scenecraft')"
+                <!-- <flux:sidebar.item icon="film" :href="route('scenecraft')" :current="request()->routeIs('scenecraft')"
                     wire:navigate>
                     {{ __('SceneCraft') }}
                 </flux:sidebar.item>
@@ -30,7 +30,7 @@
                 <flux:sidebar.item icon="chat-bubble-left-right" :href="route('conversation')"
                     :current="request()->routeIs('conversation')" wire:navigate>
                     {{ __('Conversations') }}
-                </flux:sidebar.item>
+                </flux:sidebar.item> -->
                 <flux:sidebar.item icon="check-circle" :href="route('todos.index')"
                     :current="request()->routeIs('todos*') || request()->routeIs('todo*')" wire:navigate>
                     {{ __('Todos') }}
